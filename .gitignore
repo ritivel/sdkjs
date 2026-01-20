@@ -18,3 +18,5 @@ package-lock.json
 */package-lock.json
 connector
 tests/package*
+**/*.gz
+**/*.cache
