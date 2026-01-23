@@ -411,6 +411,9 @@ CEndnotesController.prototype.RegisterEndnotes = function(nPageAbs, arrEndnotes)
  */
 CEndnotesController.prototype.HaveEndnotes = function(oSectPr, isFinal)
 {
+	if (!this.LogicDocument.IsEndnotesVisible())
+		return false;
+
 	var nEndnotesPos = this.GetEndnotePrPos();
 
 	if (isFinal && Asc.c_oAscEndnotePos.DocEnd === nEndnotesPos)
@@ -453,6 +456,9 @@ CEndnotesController.prototype.FillSection = function(nPageAbs, nColumnAbs, oSect
 };
 CEndnotesController.prototype.Recalculate = function(X, Y, XLimit, YLimit, nPageAbs, nColumnAbs, nColumnsCount, oSectPr, nSectionIndex, isFinal)
 {
+	if (!this.LogicDocument.IsEndnotesVisible())
+		return recalcresult2_End;
+
 	var oSection = this.Sections[nSectionIndex];
 	if (!oSection)
 		return recalcresult2_End;
@@ -657,6 +663,10 @@ CEndnotesController.prototype.GetLastSectionIndexOnPage = function(nPageAbs)
  */
 CEndnotesController.prototype.Draw = function(nPageAbs, nSectionIndex, oGraphics)
 {
+	// Check if endnotes are visible
+	if (!this.LogicDocument.IsEndnotesVisible())
+		return;
+
 	var oSection = this.Sections[nSectionIndex];
 	if (!oSection)
 		return;
@@ -889,6 +899,10 @@ CEndnotesController.prototype.GetNearestPos = function(X, Y, nPageAbs, bAnchor, 
  */
 CEndnotesController.prototype.CheckHitInEndnote = function(X, Y, nPageAbs)
 {
+	// Prevent interaction when endnotes are hidden
+	if (!this.LogicDocument.IsEndnotesVisible())
+		return false;
+
 	var isCheckBottom = this.GetEndnotePrPos() === Asc.c_oAscEndnotePos.SectEnd;
 
 	if (true === this.IsEmptyPage(nPageAbs))
@@ -2601,6 +2615,10 @@ CEndnotesController.prototype.IsSelectionEmpty = function(bCheckHidden)
 };
 CEndnotesController.prototype.DrawSelectionOnPage = function(nPageAbs)
 {
+	// Check if endnotes are visible
+	if (!this.LogicDocument.IsEndnotesVisible())
+		return;
+
 	if (true !== this.Selection.Use || true === this.IsEmptyPage(nPageAbs))
 		return;
 

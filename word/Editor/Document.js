@@ -1621,6 +1621,12 @@ function CDocument(DrawingDocument, isMainLogicDocument)
     this.AllFootnotesList  = null; // TODO: Переделать
     this.AllEndnotesList   = null;
 
+	// Footnotes/Endnotes visibility state
+	this.FootnotesEndnotesVisible = {
+		footnotes: true,
+		endnotes: true
+	};
+
 	//------------------------------------------------------------------------------------------------------------------
 	//  Check StartCollaborationEditing
 	//------------------------------------------------------------------------------------------------------------------
@@ -5325,7 +5331,8 @@ CDocument.prototype.Draw                                     = function(nPageInd
         var PageSection = Page.Sections[SectionIndex];
 		let sectionAbs  = PageSection.GetIndex();
 
-        this.Endnotes.Draw(nPageIndex, PageSection.Index, pGraphics);
+        if (this.IsEndnotesVisible())
+            this.Endnotes.Draw(nPageIndex, PageSection.Index, pGraphics);
 
         for (var ColumnIndex = 0, ColumnsCount = PageSection.Columns.length; ColumnIndex < ColumnsCount; ++ColumnIndex)
         {
@@ -18985,6 +18992,47 @@ CDocument.prototype.ConvertFootnoteType = function(isCurrent, isFootnotes, isEnd
 		this.UpdateInterface();
 		this.FinalizeAction();
 	}
+};
+/**
+ * Set visibility of footnotes and endnotes
+ * @param {boolean} bFootnotes - Show footnotes
+ * @param {boolean} bEndnotes - Show endnotes
+ */
+CDocument.prototype.SetFootnotesEndnotesVisible = function(bFootnotes, bEndnotes)
+{
+	this.FootnotesEndnotesVisible.footnotes = bFootnotes;
+	this.FootnotesEndnotesVisible.endnotes = bEndnotes;
+	
+	// Trigger redraw
+	this.Recalculate();
+	this.Document_UpdateInterfaceState();
+	
+	// Notify UI via callback
+	this.GetApi().sendEvent("asc_onFootnotesEndnotesVisibilityChange", bFootnotes, bEndnotes);
+};
+/**
+ * Get visibility state of footnotes and endnotes
+ * @returns {{footnotes: boolean, endnotes: boolean}}
+ */
+CDocument.prototype.GetFootnotesEndnotesVisible = function()
+{
+	return this.FootnotesEndnotesVisible;
+};
+/**
+ * Check if footnotes are currently visible
+ * @returns {boolean}
+ */
+CDocument.prototype.IsFootnotesVisible = function()
+{
+	return this.FootnotesEndnotesVisible.footnotes;
+};
+/**
+ * Check if endnotes are currently visible
+ * @returns {boolean}
+ */
+CDocument.prototype.IsEndnotesVisible = function()
+{
+	return this.FootnotesEndnotesVisible.endnotes;
 };
 CDocument.prototype.TurnOffCheckChartSelection = function()
 {

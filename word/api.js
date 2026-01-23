@@ -5408,6 +5408,23 @@ background-repeat: no-repeat;\
 	asc_docs_api.prototype["asc_IsCursorInEndnote"]   = asc_docs_api.prototype.asc_IsCursorInEndnote;
 	asc_docs_api.prototype["asc_ConvertFootnoteType"] = asc_docs_api.prototype.asc_ConvertFootnoteType;
 
+	// Footnotes/Endnotes visibility toggle
+	asc_docs_api.prototype.asc_SetFootnotesEndnotesVisible = function(bFootnotesVisible, bEndnotesVisible)
+	{
+		var oLogicDocument = this.private_GetLogicDocument();
+		if (oLogicDocument)
+			oLogicDocument.SetFootnotesEndnotesVisible(bFootnotesVisible, bEndnotesVisible);
+	};
+	asc_docs_api.prototype.asc_GetFootnotesEndnotesVisible = function()
+	{
+		var oLogicDocument = this.private_GetLogicDocument();
+		if (oLogicDocument)
+			return oLogicDocument.GetFootnotesEndnotesVisible();
+		return {footnotes: true, endnotes: true};
+	};
+	asc_docs_api.prototype["asc_SetFootnotesEndnotesVisible"] = asc_docs_api.prototype.asc_SetFootnotesEndnotesVisible;
+	asc_docs_api.prototype["asc_GetFootnotesEndnotesVisible"] = asc_docs_api.prototype.asc_GetFootnotesEndnotesVisible;
+
 
 	asc_docs_api.prototype.put_AddPageBreak              = function()
 	{

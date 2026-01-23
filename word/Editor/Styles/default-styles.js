@@ -75,8 +75,8 @@
 			TextPr     : {
 				FontSize   : 20,
 				FontSizeCS : 20,
-				Color      : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -107,8 +107,8 @@
 			TextPr         : {
 				FontSize   : 16,
 				FontSizeCS : 16,
-				Color      : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -139,8 +139,8 @@
 			TextPr         : {
 				FontSize   : 14,
 				FontSizeCS : 14,
-				Color      : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -171,8 +171,8 @@
 			TextPr         : {
 				Italic     : true,
 				ItalicCS   : true,
-				Color      : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -201,8 +201,8 @@
 				OutlineLvl : 4
 			},
 			TextPr         : {
-				Color      : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -233,8 +233,8 @@
 			TextPr         : {
 				Italic     : true,
 				ItalicCS   : true,
-				Color      : {r : 0x59, g : 0x59, b : 0x59},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, 0xA6, null),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -363,8 +363,8 @@
 			TextPr     : {
 				FontSize   : 20,
 				FontSizeCS : 20,
-				Color      : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -383,8 +383,8 @@
 			TextPr     : {
 				FontSize   : 16,
 				FontSizeCS : 16,
-				Color      : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -403,8 +403,8 @@
 			TextPr     : {
 				FontSize   : 14,
 				FontSizeCS : 14,
-				Color      : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color      : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill    : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts     : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -423,8 +423,8 @@
 			TextPr     : {
 				Italic   : true,
 				ItalicCS : true,
-				Color    : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill  : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color    : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill  : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts   : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -441,8 +441,8 @@
 			Link       : "Heading5",
 			UiPriority : 9,
 			TextPr     : {
-				Color   : {r : 0x0F, g : 0x47, b : 0x61},
-				Unifill : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorAccent1, null, 0xBF),
+				Color   : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts  : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},
@@ -461,8 +461,8 @@
 			TextPr     : {
 				Italic   : true,
 				ItalicCS : true,
-				Color    : {r : 0x59, g : 0x59, b : 0x59},
-				Unifill  : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, 0xA6, null),
+				Color    : {r : 0x00, g : 0x00, b : 0x00},
+				Unifill  : AscCommonWord.CreateThemeUnifill(EThemeColor.themecolorText1, null, null),
 				RFonts   : {
 					Ascii    : {Name : DEFAULT_HEADING_FONT, Index : -1},
 					EastAsia : {Name : DEFAULT_HEADING_FONT, Index : -1},

@@ -68,6 +68,9 @@
 	};
 	CRunFootnoteReference.prototype.Draw = function(X, Y, Context, PDSE)
 	{
+		if (!this.private_IsVisible())
+			return;
+
 		if (true === this.IsCustomMarkFollows())
 			return;
 
@@ -84,6 +87,16 @@
 		if (this.Widths.length !== T.length)
 			return;
 
+		// Draw blue background badge for citation marker
+		// Scale height for superscript text size
+		var scaledHeight = this.TextAscent * FontKoef;
+		var pad = 0.3; // padding in mm
+		Context.b_color1(37, 99, 235, 255); // #2563eb blue
+		Context.rect(X - pad, Y - scaledHeight - pad, this.GetWidth() + pad * 2, scaledHeight + pad * 2);
+		Context.df();
+
+		// Set white text color via brush (FillText uses brush color, not pen color)
+		Context.b_color1(255, 255, 255, 255);
 		for (var nPos = 0; nPos < T.length; ++nPos)
 		{
 			var Char = T.charAt(nPos);
@@ -165,6 +178,22 @@
 	{
 		return this.Footnote;
 	};
+	CRunFootnoteReference.prototype.private_IsVisible = function()
+	{
+		if (!this.Footnote)
+			return true;
+
+		var oLogicDocument = this.Footnote.Get_LogicDocument ? this.Footnote.Get_LogicDocument() : null;
+		if (!oLogicDocument && this.Footnote.GetLogicDocument)
+			oLogicDocument = this.Footnote.GetLogicDocument();
+
+		if (!oLogicDocument)
+			return true;
+
+		return (this.Type === para_EndnoteReference)
+			? oLogicDocument.IsEndnotesVisible()
+			: oLogicDocument.IsFootnotesVisible();
+	};
 	CRunFootnoteReference.prototype.UpdateNumber = function(PRS, isKeepNumber)
 	{
 		if (this.Footnote && true !== PRS.IsFastRecalculate() && PRS.TopDocument instanceof CDocument)
@@ -206,6 +235,9 @@
 		this.Width        = 0;
 		this.WidthVisible = 0;
 		this.TextAscent   = 0;
+
+		if (!this.private_IsVisible())
+			return;
 
 		if (this.IsCustomMarkFollows())
 			return;

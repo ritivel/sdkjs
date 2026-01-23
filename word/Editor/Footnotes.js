@@ -470,6 +470,10 @@ CFootnotesController.prototype.GetHeight = function(nPageAbs, nColumnAbs)
  */
 CFootnotesController.prototype.Draw = function(nPageAbs, pGraphics)
 {
+	// Check if footnotes are visible
+	if (!this.LogicDocument.IsFootnotesVisible())
+		return;
+
 	var oPage = this.Pages[nPageAbs];
 	if (!oPage)
 		return;
@@ -865,6 +869,10 @@ CFootnotesController.prototype.GetNearestPos = function(X, Y, PageAbs, bAnchor, 
  */
 CFootnotesController.prototype.CheckHitInFootnote = function(X, Y, nPageAbs)
 {
+	// Prevent interaction when footnotes are hidden
+	if (!this.LogicDocument.IsFootnotesVisible())
+		return false;
+
 	if (true === this.IsEmptyPage(nPageAbs))
 		return false;
 
@@ -2593,6 +2601,10 @@ CFootnotesController.prototype.IsSelectionEmpty = function(bCheckHidden)
 };
 CFootnotesController.prototype.DrawSelectionOnPage = function(nPageAbs)
 {
+	// Check if footnotes are visible
+	if (!this.LogicDocument.IsFootnotesVisible())
+		return;
+
 	if (true !== this.Selection.Use || true === this.IsEmptyPage(nPageAbs))
 		return;
 
